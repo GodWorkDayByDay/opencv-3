@@ -1,0 +1,47 @@
+AUTOMATIC LICENSE PLATE RECOGNITION
+===================================
+
+ABOUT THIS CODE
+---------------
+
+This code is a sample code for know how works an automatic license plate recognition (ANPR). It's not for production tasks.
+
+You can use this code as sample and guide to create your custom projects as ANPR or OCR applications.
+
+REQUIREMENTS
+------------
+
+You only need OpenCV library and your compiler.
+
+COMPILATION
+-----------
+
+Create a build folder for store and generate all binary files.
+Use CMake GUI or CMake command line for create the scripts builds and project for your common builder.
+Open the project in your common editor/builder
+Compile
+
+UNIX COMPILATION
+----------------
+
+Go inside src folder
+
+	mkdir build
+	cd build
+	cmake ../
+	make
+
+RUN APPLICATION
+---------------
+
+Use a command line terminal.
+Go inside build folder and type:
+
+	./ANPR test/2715DTZ.jpg
+
+You can choose other image that are in test folder or other image where contain a spanish license plate taked between 2 and 3 meters.
+
+AUTOR
+-----
+
+David Millán Escrivá.

@@ -1,0 +1,48 @@
+Exploring Structure from Motion using OpenCV
+============================================
+
+Building
+--------
+Unix:
+	mkdir build
+	cd build
+	cmake ..
+	make 
+
+MacOSX Xcode:
+	mkdir build
+	cd build
+	cmake -G Xcode ..
+	open ExploringSfMWithOpenCV.xcodeproj
+
+Windows MSVC:
+	mkdir build
+	cd build
+	cmake -G "Visual Studio 10" ..
+	start ExploringSfMWithOpenCV.sln 
+
+Prerequisites
+-------------
+OpenCV (latest): http://opencv.willowgarage.com/wiki/
+PCL: http://pointclouds.org/
+Cmake: http://www.cmake.org/
+
+Usage
+-----
+	ExploringSfMExec <path_to_images>	
+
+Files
+-----
+SfM Library
+	Common.* 		- Common data structures and utility functions
+	Triangulation.* 	- Triangulation functions
+	FeatureMatching.* 	- Feature matching functions
+	FindCameraMatrices.* 	- Finding camera matrices functions
+	IDistance.h		- Abstract class for SfM methods
+	Distance.*		- SfM class for 2-view reconstruction
+	MultiCameraDistace.*	- SfM abstract class for n-view reconstruction
+	MultiCameraPnP.*	- SfM class for n-view using camera resection (PnP)
+	
+SfM Application
+	main.cpp		- Main program
+	Visualization.*		- Visualization of result point cloud using PCL
