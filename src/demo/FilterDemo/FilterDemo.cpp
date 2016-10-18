@@ -18,6 +18,22 @@ int main()
 		cap >> frame;
 		if (frame.empty()) return -1;
 		cv::imshow("org", frame);
+		for (int i = 11; i < KERNEL_LENGTH; i = i + 2) {
+			cv::GaussianBlur(frame, filter1, cv::Size(i, i), 0);
+		}
+		for (int i = 11; i < KERNEL_LENGTH; i = i + 2) {
+			cv::medianBlur(frame, filter2, i);
+		}
+		for (int i = 11; i < KERNEL_LENGTH; i = i + 2) {
+			cv::bilateralFilter(frame, filter3, i, i * 2, i / 2);
+		}
+
+		cv::imshow("GaussianBlur", filter1);
+		cv::imshow("medianBlur", filter2);
+		cv::imshow("bilateralFilter", filter3);
+
+		auto key = cv::waitKey(5);
+		if (VK_ESCAPE == key) break;
 	}
 
     return 0;
