@@ -34,7 +34,7 @@ int main()
 	cv::Mat gray1, gray2, diffgray, thresgray;
 
 	while (true) {
-		cap.open("../../../images/768x576.avi");
+		cap.open("../../../images/bouncingBall.avi");
 		if (!cap.isOpened()) return -1;
 		while (
 			cap.get(cv::CAP_PROP_POS_FRAMES) < cap.get(cv::CAP_PROP_FRAME_COUNT) - 1
