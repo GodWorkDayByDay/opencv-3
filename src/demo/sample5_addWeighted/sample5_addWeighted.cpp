@@ -84,6 +84,9 @@ int main()
 		std::cout << "can not open camera.\n";
 		return -1;
 	}
+	//cap.set(CV_CAP_PROP_FRAME_WIDTH, 1280);
+	//cap.set(CV_CAP_PROP_FRAME_HEIGHT, 720);
+
 	cv::Mat logo = cv::imread("..\\..\\..\\images\\logo2.png", cv::IMREAD_COLOR);
 
 	while (true) {
@@ -104,7 +107,7 @@ int main()
 		std::stringstream ss;
 		ss << std::fixed << std::setprecision(2) << "avg time per frame : " << avgdur(dur) << " ms. fps : " << avgfps();
 		cv::putText( frame, ss.str(), cv::Point(280, 20), cv::FONT_HERSHEY_SIMPLEX | cv::FONT_ITALIC, 0.5, cv::Scalar(55,55,255));
-
+		//cv::namedWindow("view", CV_WINDOW_AUTOSIZE);
 		cv::imshow("view", frame);
 		auto key = cv::waitKey(10);
 		if (VK_ESCAPE == key) break;
